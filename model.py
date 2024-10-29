@@ -6,7 +6,7 @@ import pickle
 
 # Simple dataset of three four features 
 # First of all load csv dataset file into dataframe
-dataset = pd.read_csv('hiring.csv')
+dataset = pd.read_csv('hiring.csv', sep=";")
 print (dataset)
 
 dataset['experience'].fillna(0, inplace=True)
@@ -21,7 +21,7 @@ def convert_to_int(word):
                 'nine':9, 'ten':10, 'eleven':11, 'twelve':12, 'zero':0, 0: 0}
     return word_dict[word]
 
-X['experience'] = X['experience'].apply(lambda x : convert_to_int(x))
+
 
 y = dataset.iloc[:, -1]
 
